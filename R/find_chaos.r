@@ -242,5 +242,4 @@ optimize_chaos_run <- function(find_thresh, test01_thresh = 0.05, chaos_borders_
   }
 
   return(list(left_borders_final, right_borders_final))
-
 }
