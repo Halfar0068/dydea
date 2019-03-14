@@ -1,6 +1,6 @@
 Package: dydea
 Type: Package
-Title: Detection of chaotic and regular intervals in the data
+Title: Detection of Chaotic and Regular Intervals in the Data
 Version: 0.1.0
 Authors@R: person("Radek", "Halfar", email = "radek.halfar@vsb.cz", role = c("aut", "cre"))
 Description: Finds regular and chaotic intervals in the data using 
