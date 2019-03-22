@@ -1,5 +1,8 @@
 ﻿## Resubmission
-This is a resubmission. In this version I have:
+This is a second resubmission. In this version I have:
+* Removed Rd files for unexported functions, therefore all Rd files contains examples. Description of unexported functions has remained in r files.
+
+In the first resubmission, I had:
 * Converted the DESCRIPTION title to title case.
 
 ## Test environments

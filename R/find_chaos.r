@@ -53,10 +53,10 @@ find_chaos <- function(data, window_length, skip_window, skip_test01 = 1, test01
 
 # Find the borders of chaotic motion (from the output of the function test_chaos01_mw). -----------------------------
 find_chaotic_borders <- function(test01_res) {
-  #' Find the borders of chaotic motion from the results of test_chaos01_mw.
-  #'
-  #' @param test01_res The result of the 0-1 test for chaos calculated in mowing window.
-  #' @return The list of optimized chaotic motion borders.
+  ## Find the borders of chaotic motion from the results of test_chaos01_mw.
+  ##
+  ## @param test01_res The result of the 0-1 test for chaos calculated in mowing window.
+  ## @return The list of optimized chaotic motion borders.
 
   test01res_ <- test01_res$test01_res
   left_borders_temp <- vector(mode = "numeric", length = 0)
@@ -88,17 +88,17 @@ find_chaotic_borders <- function(test01_res) {
 # Optimization the boundaries found by the function find_chaotic_borders. ------------------------------------------------
 optimize_chaos <- function(find_thresh, test01_thresh = 0.05, chaos_borders_temp, test01_res, data, skip_window, window_length,
     skip_test01) {
-  #' Returns boundaries of found chaotic motion.
-  #'
-  #' @param find_thresh Precision of found intervals.
-  #' @param test01_thresh The threshold to decide about motion.
-  #' @param chaos_borders_temp Borders of chaotic motion found by function find_chaotic_borders.
-  #' @param test01_res The results of the 0-1 test for chaos in each computed window.
-  #' @param data Analyzed data.
-  #' @param skip_window Length of the skip of the window moving in the data.
-  #' @param window_length Length of the window for in which the 0-1 test for chaos will be computed
-  #' @param skip_test01 Length of the skip to take data for calculation the 0-1 test for chaos in the window.
-  #' @return The list of optimized chaotic motion borders.
+  ## Returns boundaries of found chaotic motion.
+  ##
+  ## @param find_thresh Precision of found intervals.
+  ## @param test01_thresh The threshold to decide about motion.
+  ## @param chaos_borders_temp Borders of chaotic motion found by function find_chaotic_borders.
+  ## @param test01_res The results of the 0-1 test for chaos in each computed window.
+  ## @param data Analyzed data.
+  ## @param skip_window Length of the skip of the window moving in the data.
+  ## @param window_length Length of the window for in which the 0-1 test for chaos will be computed
+  ## @param skip_test01 Length of the skip to take data for calculation the 0-1 test for chaos in the window.
+  ## @return The list of optimized chaotic motion borders.
 
   if ((length(chaos_borders_temp[[1]]) == 0) && (length(chaos_borders_temp[[2]]) == 0)) { # if there is no chaotic interval found
       chaos_borders_final <- chaos_borders_temp  #vector(mode='numeric', length=0)
@@ -116,16 +116,16 @@ optimize_chaos <- function(find_thresh, test01_thresh = 0.05, chaos_borders_temp
 
 # Optimization the boundaries found by the function find_chaotic_borders. ------------------------------------------------------
 optimize_chaos_run <- function(find_thresh, test01_thresh = 0.05, chaos_borders_temp, data, skip_window, window_length, skip_test01) {
-  #' Optimization of chaotic motion borders based on bisection method.
-  #'
-  #' @param find_thresh Precision of found intervals.
-  #' @param test01_thresh The threshold to decide about motion.
-  #' @param chaos_borders_temp Borders of chaotic motion found by function find_chaotic_borders
-  #' @param data Analyzed data.
-  #' @param skip_window Length of the skip of the window moving in the data.
-  #' @param window_length Length of the window for in which the 0-1 test for chaos will be computed.
-  #' @param skip_test01 Length of the skip to take data for calculation the 0-1 test for chaos in the window.
-  #' @return The list of optimized chaotic motion borders.
+  ## Optimization of chaotic motion borders based on bisection method.
+  ##
+  ## @param find_thresh Precision of found intervals.
+  ## @param test01_thresh The threshold to decide about motion.
+  ## @param chaos_borders_temp Borders of chaotic motion found by function find_chaotic_borders
+  ## @param data Analyzed data.
+  ## @param skip_window Length of the skip of the window moving in the data.
+  ## @param window_length Length of the window for in which the 0-1 test for chaos will be computed.
+  ## @param skip_test01 Length of the skip to take data for calculation the 0-1 test for chaos in the window.
+  ## @return The list of optimized chaotic motion borders.
 
   right_borders_final <- vector(mode = "numeric", length = 0)
   left_borders_final <- vector(mode = "numeric", length = 0)
